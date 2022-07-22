@@ -1,0 +1,22 @@
+name: deploy
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Required Packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y
+          sudo apt-get install -y pandoc python3 python-is-python3
+      - name: Build
+        run: ./gen.sh
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
