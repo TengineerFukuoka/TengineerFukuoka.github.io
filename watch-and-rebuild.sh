@@ -8,5 +8,5 @@ fi
 
 inotifywait -m -r -e close_write src |
     while read; do
-        "${dir}/gen.sh" || echo 'Generation failed' && echo 'Rebuilt'
+        bash "${dir}/gen.sh" || echo 'Generation failed' && echo 'Rebuilt'
     done
