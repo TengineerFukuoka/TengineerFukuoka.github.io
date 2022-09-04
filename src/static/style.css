@@ -2,12 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    font-size: larger;
+    font-size: 16px;
 }
 
 h1.title {
     margin: 0;
-    padding: 15px;
+    padding: 30px;
+    font-size: 2.2rem;
     background-color: white;
     color: #37474F;
 }
@@ -24,6 +25,7 @@ a.top-link {
 section.top {
     text-align: center;
     padding: 300px 10px;
+    line-height: 1.8em;
 }
 
 section.top.future-event {
@@ -31,14 +33,15 @@ section.top.future-event {
 }
 
 section.top.future-event h2 {
+    font-size: 2rem;
     font-weight: bold;
+    line-height: 1.3em;
     color: #F5B204;
 }
 
 section.top .section-contents {
     max-width: 900px;
     margin: 0 auto;
-    color: #0B382B;
 }
 
 section.top.future-event .mokumoku {
@@ -63,22 +66,17 @@ section.top.past-event .more-articles {
 section.top h2 {
     margin: 0;
     padding: 50px 0;
-    font-weight: normal;
     text-align: center;
+    font-size: 2rem;
     font-weight: bold;
-    color: #F5B204;;
+    line-height: 1.3em;
+    color: #F5B204;
 }
 
 section.top p {
     text-align: left;
     width: 60%;
     padding: 0 20px;
-    color: #0B382B
-}
-
-section.top .twitter-frame {
-    max-width: 500px;
-    margin: 0 auto;
 }
 
 a.ev-link {
@@ -94,28 +92,32 @@ a.ev-link {
 }
 
 .ev-date {
-    width: 80px;
+    width: 20%;
     margin-right: 18px;
     font-weight: bold;
     align-items: center;
 }
 
 .ev-yr {
-    font-size: 15px;
+    font-size: 0.8rem;
     color: gray;
     line-height: 100%;
     text-align: center;
 }
 
+a:hover .ev-yr {
+    color:  rgb(213, 213, 213);
+}
+
 .ev-day {
-    font-size: 25px;
+    font-size: 1.5rem;
     line-height: 100%;
 }
 
 .ev-weekday {
     width: 50px;
     padding-top: 6px;
-    font-size: 20px;
+    font-size: 1.2rem;
     line-height: 100%;
     font-weight: bold;
     align-items: center;
@@ -128,11 +130,11 @@ a:hover .ev-weekday {
 }
 
 .ev-weekday.sun {
-    color: #d25858;
+    color: #bd7878;
 }
 
 a:hover .ev-weekday.sun {
-    color: #ff9191;
+    color: #d2a5a5;
 }
 
 .ev-weekday.sat {
@@ -140,7 +142,7 @@ a:hover .ev-weekday.sun {
 }
 
 a:hover .ev-weekday.sat {
-    color: #8181fc;
+    color: #86a6b3;
 }
 
 .ev-title {
@@ -161,7 +163,7 @@ a.articles-item-link {
 
 .articles-item .title {
     font-weight: bold;
-    font-size: 23px;
+    font-size: 1rem;
 }
 
 .articles-item .date {
@@ -169,18 +171,24 @@ a.articles-item-link {
     color: #555;
 }
 
+section.top .twitter-frame {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* article */
 header {
     background-color: white;
 }
 
 header.header .sub-title {
-    text-align: right;
+    text-align: center;
     margin: 0 100px;
 }
 
-header.header h1 {
+header.header h3 {
     text-align: center;
-    font-size: 4rem;
+    font-size: 1.5rem;
     margin: 30px 100px;
     line-height: 100%;
 }
@@ -213,6 +221,7 @@ header.header .post-meta {
 }
 
 .post.content {
+    width: 90%;
     background-color: #fafafa;
     padding: 40px;
 }
