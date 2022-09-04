@@ -32,13 +32,6 @@ section.top.future-event {
     background-color: #F0E8DE;
 }
 
-section.top.future-event h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 1.3em;
-    color: #F5B204;
-}
-
 section.top .section-contents {
     max-width: 900px;
     margin: 0 auto;
@@ -71,12 +64,6 @@ section.top h2 {
     font-weight: bold;
     line-height: 1.3em;
     color: #F5B204;
-}
-
-section.top p {
-    text-align: left;
-    width: 60%;
-    padding: 0 20px;
 }
 
 a.ev-link {
