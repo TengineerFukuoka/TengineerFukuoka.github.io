@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link href="{{ .Site.BaseURL }}style.css" rel="stylesheet"/>
+
+    {{- $title := .Title }}
+    {{- if (and .IsNode (eq .Section "activity")) }}
+      {{ $title = "過去の活動" }}
+    {{ end -}}
+    <title>{{ if not .IsHome}}{{ $title }} | {{ end }}{{ .Site.Title }}</title>
+  </head>
+  <body>
+    <h1 class="title"><a href="{{ .Site.BaseURL }}" class="top-link">TENGINEER福岡</a></h1>
+
+    {{- block "main" . }}{{ end }}
+    </div>
+  </body>
+</html>

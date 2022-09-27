@@ -1,0 +1,52 @@
+{{ define "main" }}
+<div class="content">
+  <section class="top future-event">
+    <div class="section-contents">
+      <h2>イベント予定</h2>
+      <div class="section-contents">
+        {{ if $.Site.Data.events }}
+          {{ range (sort $.Site.Data.events "date") }}
+            {{ partial "activity" (dict "date" .date "title" .title "link" .link) }}
+          {{ end }}
+        {{ end }}
+        <div class="mokumoku">
+          毎週土日 14:00〜 / 20:00〜 週末もくもく会
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="top about-us">
+    <div class="section-contents">
+      <h2>TENGINEER福岡とは</h2>
+      2022.4に結成された学生コミュニティ。<br>
+      プログラミングや情報系の資格に興味のある仲間が集まり、Discord での交流やイベント開催を行っています。
+    </div>
+  </section>
+
+  <section class="top past-event">
+    <div class="section-contents">
+      <h2>過去の活動</h2>
+      <div class="section-contents">
+        {{ $recentActivities := first 3 (((where site.RegularPages "Section" "activity").ByParam "event-date").Reverse) }}
+        {{ range $recentActivities }}
+          {{ $link := .Params.Get "custom-link" }}
+          {{ if not $link }}
+            {{ $link = .Permalink }}
+          {{ end }}
+          {{ partial "activity" (dict "date" (.Params.Get "event-date") "title" .Title "link" $link) }}
+        {{ end }}
+      </div>
+    </div>
+
+    <a class="more-articles" href="{{ .Site.BaseURL }}activity/">More ▶</a>
+  </section>
+
+  <section class="top sns">
+    <h2>SNS</h2>
+    <div class="twitter-frame">
+      <a class="twitter-timeline" href="https://twitter.com/TENGINEER2022?ref_src=twsrc%5Etfw" data-height="800px">Tweets by TENGINEER2022</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </section>
+</div>
+{{ end }}

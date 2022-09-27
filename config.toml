@@ -1,0 +1,4 @@
+baseURL = 'https://penguin-island.github.io/TENGINEER/'
+languageCode = 'ja-jp'
+title = '学生コミュニティ TENGINEER福岡'
+toc = true

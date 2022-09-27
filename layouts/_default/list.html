@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="article-list">
+  <h2>過去の活動</h2>
+  <div class="content">
+    {{- range .Paginator.Pages }}
+      {{ $link := .Params.Get "custom-link" }}
+      {{ if not $link }}
+        {{ $link = .Permalink }}
+      {{ end }}
+      {{- partial "activity" (dict "date" (.Params.Get "event-date") "title" .Title "link" $link)}}
+    {{- end }}
+  </div>
+
+  <footer class="pager">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}"  class="prev-post">
+      ◁
+    </a>
+    {{ end }}
+
+    {{ with .Paginator.HasNext }}
+    <a href="{{ .Paginator.Hext.URL }}" class="next-post">
+      ▷
+    </a>
+    {{ end }}
+  </footer>
+</div>
+{{ end }}

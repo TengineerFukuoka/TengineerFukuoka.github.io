@@ -1,19 +1,22 @@
 name: deploy
 on: [push]
 
+env:
+  HUGO_VERSION: '0.102.3'
+
 jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install Required Packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y
-          sudo apt-get install -y pandoc python3 python-is-python3
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
       - name: Build
-        run: bash ./gen.sh
+        run: hugo
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' }}

@@ -1,0 +1,21 @@
+{{ $dow := time.Format "Mon" .date }}
+{{ $disableLink := eq .link "none" }}
+{{ if $disableLink }}
+<span class="articles-item-link">
+{{ else }}
+<a href="{{ .link }}" class="articles-item-link">
+{{ end }}
+  <div class="ev-row">
+    <div class="ev-date">
+      <div class="ev-date-label">開催日</div>
+      <div class="ev-yr">{{ time.Format "2006" .date }}</div>
+      <div class="ev-day">{{ time.Format "01/02" .date }}</div>
+    </div>
+    <div class="ev-weekday {{ lower $dow }}">{{ $dow }}</div>
+    <div class="ev-title">{{ .title }}</div>
+  </div>
+{{ if $disableLink }}
+</span>
+{{ else }}
+</a>
+{{ end }}
