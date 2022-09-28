@@ -6,20 +6,19 @@
 
       <h3>{{ .Title }}</h3>
 
-      <!--
-      <div class="event-info">
-        <div class="ev-date">
-          <div class="ev-yr">$event-yr$</div>
-          <div class="ev-day">$event-mo$/$event-day$</div>
-        </div>
+      <!-- <div class="event-info">
+           {{ $eventDate := .Params.Get "event-date" }}
+           <div class="ev-date">
+           <div class="ev-yr">{{ time.Format "2006" $eventDate }}</div>
+           <div class="ev-day">{{ time.Format "01/02" $eventDate }}</div>
+           </div>
 
-        <div class="ev-weekday $event-wd-class$">$event-wd$</div>
+           <div class="ev-weekday {{ time.Format "Mon" $eventDate | lower }}">{{ time.Format "Mon" $eventDate }}</div>
 
-        <div class="event-name">
-             $event-name$
-        </div>
-      </div>
-    -->
+           <div class="event-name">
+           {{ .Params.Get "event-name" }}
+           </div>
+           </div> -->
 
       <div class="post-meta">
         <div class="date">投稿　{{- time.Format "2006.01.02" .Page.Date }}</div>
@@ -28,7 +27,9 @@
     </header>
 
     <div class="post content">
-      {{ .TableOfContents }}
+      {{ if and (gt .WordCount 400) (.Params.toc) }}
+        {{ .TableOfContents }}
+      {{ end }}
 
       <article>
         {{ .Content }}
@@ -36,16 +37,16 @@
     </div>
 
     <footer class="pager">
-      {{ with .PrevInSection }}
-      <a href="{{ .Permalink }}"  class="prev-post">
+      {{- with .PrevInSection }}
+      <a href="{{ .RelPermalink }}"  class="prev-post">
         ◁ {{ .LinkTitle }}
       </a>
       {{ end }}
 
-      {{ with .NextInSection }}
-      <a href="{{ .Permalink }}" class="next-post">
+      {{- with .NextInSection }}
+      <a href="{{ .RelPermalink }}" class="next-post">
         {{ .LinkTitle }} ▷
       </a>
-      {{ end }}
+      {{ end -}}
     </footer>
 {{ end }}

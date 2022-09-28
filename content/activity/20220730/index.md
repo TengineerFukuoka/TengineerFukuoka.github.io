@@ -6,7 +6,7 @@ date: "2022-09-04"
 # 書いた人
 author: "Pen"
 # イベント名
-event-name: 月例会#03"
+event-name: "月例会#03"
 # イベント開催日 "yyyy-mm-dd"
 event-date: "2022-07-30"
 # イベント一覧での挙動を変更します。

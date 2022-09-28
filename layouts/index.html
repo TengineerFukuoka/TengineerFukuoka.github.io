@@ -4,11 +4,11 @@
     <div class="section-contents">
       <h2>イベント予定</h2>
       <div class="section-contents">
-        {{ if $.Site.Data.events }}
-          {{ range (sort $.Site.Data.events "date") }}
-            {{ partial "activity" (dict "date" .date "title" .title "link" .link) }}
-          {{ end }}
-        {{ end }}
+        {{- if $.Site.Data.events }}
+          {{- range (sort $.Site.Data.events "date") }}
+            {{- partial "activity" (dict "date" .date "title" .title "link" .link) }}
+          {{- end }}
+        {{- end }}
         <div class="mokumoku">
           毎週土日 14:00〜 / 20:00〜 週末もくもく会
         </div>
@@ -28,14 +28,14 @@
     <div class="section-contents">
       <h2>過去の活動</h2>
       <div class="section-contents">
-        {{ $recentActivities := first 3 (((where site.RegularPages "Section" "activity").ByParam "event-date").Reverse) }}
-        {{ range $recentActivities }}
-          {{ $link := .Params.Get "custom-link" }}
-          {{ if not $link }}
-            {{ $link = .Permalink }}
-          {{ end }}
-          {{ partial "activity" (dict "date" (.Params.Get "event-date") "title" .Title "link" $link) }}
-        {{ end }}
+        {{- $recentActivities := first 3 (((where site.RegularPages "Section" "activity").ByParam "event-date").Reverse) }}
+        {{- range $recentActivities }}
+          {{- $link := .Params.Get "custom-link" }}
+          {{- if not $link }}
+            {{- $link = .RelPermalink }}
+          {{- end }}
+          {{- partial "activity" (dict "date" (.Params.Get "event-date") "title" .Title "link" $link) }}
+        {{- end }}
       </div>
     </div>
 

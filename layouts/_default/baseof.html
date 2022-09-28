@@ -3,16 +3,38 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <link href="{{ .Site.BaseURL }}style.css" rel="stylesheet"/>
+    <link href="{{ relURL "style.css" }}" rel="stylesheet"/>
 
     {{- $title := .Title }}
     {{- if (and .IsNode (eq .Section "activity")) }}
-      {{ $title = "過去の活動" }}
-    {{ end -}}
+      {{- $title = "過去の活動" }}
+    {{- end }}
     <title>{{ if not .IsHome}}{{ $title }} | {{ end }}{{ .Site.Title }}</title>
+
+    {{- if .IsPage }}
+      {{ $customLink := .Params.Get "custom-link" }}
+      {{- if $customLink }}
+        {{- if (eq $customLink "none")}}
+          <meta http-equiv="refresh" content="0; URL=..">
+        {{ else }}
+          <meta http-equiv="refresh" content="0; URL={{ .Params.Get "custom-link" }}">
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/schema.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+
+    {{- with .OutputFormats.Get "rss" }}
+      <link rel="alternate" type="application/rss+xml" href="{{ .RelPermalink }}" title="{{ $.Site.Title }}">
+    {{- end }}
+
+    <link rel="canonical" href="{{ .Permalink }}">
   </head>
   <body>
-    <h1 class="title"><a href="{{ .Site.BaseURL }}" class="top-link">TENGINEER福岡</a></h1>
+    <h1 class="title"><a href="{{ relURL "" }}" class="top-link">TENGINEER福岡</a></h1>
 
     {{- block "main" . }}{{ end }}
     </div>

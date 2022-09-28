@@ -1,10 +1,10 @@
-{{ $dow := time.Format "Mon" .date }}
-{{ $disableLink := eq .link "none" }}
-{{ if $disableLink }}
+{{- $dow := time.Format "Mon" .date }}
+{{- $disableLink := eq .link "none" }}
+{{- if $disableLink }}
 <span class="articles-item-link">
-{{ else }}
+{{- else }}
 <a href="{{ .link }}" class="articles-item-link">
-{{ end }}
+{{- end }}
   <div class="ev-row">
     <div class="ev-date">
       <div class="ev-date-label">開催日</div>
@@ -14,8 +14,8 @@
     <div class="ev-weekday {{ lower $dow }}">{{ $dow }}</div>
     <div class="ev-title">{{ .title }}</div>
   </div>
-{{ if $disableLink }}
+{{- if $disableLink }}
 </span>
-{{ else }}
+{{- else }}
 </a>
-{{ end }}
+{{- end }}
