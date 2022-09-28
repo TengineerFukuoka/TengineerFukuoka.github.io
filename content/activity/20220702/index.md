@@ -13,9 +13,5 @@ event-date: "2022-07-02"
 #  "" => ページにジャンプ (デフォルト)
 #  "none" => リンクを無効化
 #  任意のURL => URLにジャンプ
-custom-link: ""
+custom-link: "https://tengineer-fukuoka.connpass.com/event/250958/"
 ---
-
-# イベント情報
-
-[connpass](https://tengineer-fukuoka.connpass.com/event/250958/)
