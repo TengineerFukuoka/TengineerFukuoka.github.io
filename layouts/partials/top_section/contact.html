@@ -1,0 +1,27 @@
+<section class="bg-light" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto text-center">
+        <h1 class="mb-5">お問い合わせ</h1>
+      </div>
+    </div>
+
+    <form action="{{ relURL "" }}" class="row g-3 justify-content-center" method="get">
+      <div class="col-md-5">
+        <input type="text" name="name" class="form-control" placeholder="名前" required>
+      </div>
+      <div class="col-md-5">
+        <input type="text" name="mail" class="form-control" placeholder="xxxx@sample.com" required>
+      </div>
+      <div class="col-md-10">
+        <input type="text" name="subject" class="form-control" placeholder="件名を入力してください。" required>
+      </div>
+      <div class="col-md-10">
+        <textarea type="text" name="message" id="" cols="30" rows="5" class="form-control" placeholder="メッセージを入力してください。" required></textarea>
+      </div>
+      <div class="col-md-10 d-grid">
+        <input type="submit" class="btn btn-primary" value="送信" />
+      </div>
+    </form>
+  </div>
+</section>

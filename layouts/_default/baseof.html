@@ -2,8 +2,16 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
+
+    <meta rel="preconnect" href="https://fonts.googleapis.com">
     <meta name="viewport" content="width=device-width"/>
-    <link href="{{ relURL "style.css" }}" rel="stylesheet"/>
+
+    {{ partial "bootstrap.html" }}
+
+    {{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "style.css" . | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+    <link rel="icon" type="image/svg+xml" href="{{ relURL "img/tengineer.png" }}" />
 
     {{- $title := .Title }}
     {{- if (and .IsNode (eq .Section "activity")) }}
@@ -34,9 +42,11 @@
     <link rel="canonical" href="{{ .Permalink }}">
   </head>
   <body>
-    <h1 class="title"><a href="{{ relURL "" }}" class="top-link">TENGINEER福岡</a></h1>
+    {{ partial "navbar.html" . }}
 
     {{- block "main" . }}{{ end }}
+
+    {{ partial "footer.html" . }}
     </div>
   </body>
 </html>

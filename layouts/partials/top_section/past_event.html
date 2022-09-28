@@ -1,0 +1,17 @@
+<section class="event past-event" id="blog">
+  <div class="section-contents">
+    <h2>過去の活動</h2>
+    <div class="section-contents">
+      {{- $recentActivities := first 3 (((where site.RegularPages "Section" "activity").ByParam "event-date").Reverse) }}
+      {{- range $recentActivities }}
+        {{- $link := .Params.Get "custom-link" }}
+        {{- if not $link }}
+          {{- $link = .RelPermalink }}
+        {{- end }}
+        {{- partial "activity" (dict "date" (.Params.Get "event-date") "title" .Title "link" $link) }}
+      {{- end }}
+    </div>
+  </div>
+
+  <a class="more-articles" href="{{ relURL "activity/" }}">More ▶</a>
+</section>

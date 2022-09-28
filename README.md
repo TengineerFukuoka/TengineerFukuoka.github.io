@@ -19,6 +19,53 @@ $ hugo new activity/<適当な名前>.md
 
 で自動で体裁を整えたファイルを作ってくれます。
 
+## トップページのカスタマイズ
+
+### 内容を増やす・減らす
+
+`config.toml` の `[Params.top]` の `section` を書き換えることでカスタマイズ可能です。
+詳しくは `config.toml` を見てください。
+
+### メンバー
+
+`section` で `member` を表示するようにした場合、内容は `config.toml` の `[[Params.top.members]]` でカスタマイズできます。
+
+```toml
+[[Params.top.members]]
+  # 表示したいユーザ名
+  name = "hoge"
+  # アイコン画像の URL
+  avatar = ""
+  # 肩書
+  title = "会長"
+  # Facebook のユーザ名
+  facebook = ""
+  # Twitter のユーザ名
+  twitter = ""
+  # GitHub のユーザ名
+  github = ""
+```
+
+複数人表示したい場合は `[[Params.top.members]]` のセクションを複数書いてください。例:
+
+```toml
+[[Params.top.members]]
+  name = "foo"
+  avatar = ""
+  title = "会長"
+  facebook = ""
+  twitter = ""
+  github = ""
+
+[[Params.top.members]]
+  name = "bar"
+  avatar = ""
+  title = "会長"
+  facebook = ""
+  twitter = ""
+  github = ""
+```
+
 ## ローカル環境での実行
 
 Hugo を使っています。[こちら](https://gohugo.io/)からダウンロードしてください。

@@ -1,0 +1,36 @@
+<section id="member">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto text-center">
+        <h1 class="mb-5">メンバー</h1>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      {{ range .Site.Params.top.members }}
+        <div class="col-lg-3 col-sm-6 text-center">
+          <div class="team-member card-effect">
+            {{ $avatar := .avatar }}
+            {{ if not $avatar }}
+              {{ $avatar = "img/avatar_neutral.png" }}
+            {{ end }}
+            <img src="{{ relURL $avatar }}" alt="">
+            <h5 class="mb-0 mt-4">{{ .name }}</h5>
+            <p>{{ .title }}</p>
+            <div class="social-icons">
+              {{ if .facebook }}
+                <a href="https://www.facebook.com/{{ .facebook }}"><i class='bx bxl-facebook'></i></a>
+              {{ end }}
+              {{ if .twitter }}
+                <a href="https://twitter.com/{{ .twitter }}"><i class='bx bxl-twitter'></i></a>
+              {{ end }}
+              {{ if .github }}
+                <a href="https://github.com/{{ .github }}"><i class='bx bxl-github'></i></a>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

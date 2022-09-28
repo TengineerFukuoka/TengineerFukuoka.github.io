@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark py-3 g3">
+  <div class="container g-3">
+    <a class="navbar-brand" href="{{ relURL "" }}">
+      <div class="row g-0">
+        <div class="col-2 topicon"><i class='bx bx-code-block'></i></div>
+        <div class="col-10 g-0"><h2 class="nav-effect mb-0">TENGINNER福岡</h2></div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {{ range .Site.Params.top.sections }}
+          {{ if eq . "hero" }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ relURL "#home" }}">TENGINEER福岡について</a>
+            </li>
+          {{ else if eq . "activity" }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ relURL "#activity" }}">活動内容</a>
+            </li>
+          {{ else if eq . "past_event" }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ relURL "#blog" }}">過去の活動</a>
+            </li>
+          {{ else if eq . "member" }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ relURL "#member" }}">メンバー</a>
+            </li>
+          {{ else if eq . "contact" }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ relURL "#contact" }}">お問い合わせ</a>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</nav>

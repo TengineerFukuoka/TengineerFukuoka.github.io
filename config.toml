@@ -1,6 +1,27 @@
-baseURL = 'https://penguin-island.github.io/TENGINEER/'
-languageCode = 'ja-jp'
-title = '学生コミュニティ TENGINEER福岡'
+baseURL = "https://penguin-island.github.io/TENGINEER/"
+languageCode = "ja-jp"
+title = "学生コミュニティ TENGINEER福岡"
 toc = true
 hasCJKLanguage = true
 enableEmoji = true
+
+[Params.top]
+  # Displays top page's item in order.
+  # "hero", "activity", "upcoming_event", "past_event", "member", "contact" are supported.
+  sections = ["hero", "activity", "upcoming_event", "past_event", "member"]
+
+[[Params.top.members]]
+  name = "Sharbat Khan"
+  avatar = ""
+  title = "Web Developer"
+  facebook = ""
+  twitter = ""
+  github = ""
+
+[[Params.top.members]]
+  name = "Sharbat Khan"
+  avatar = ""
+  title = "Web Developer"
+  facebook = ""
+  twitter = ""
+  github = ""

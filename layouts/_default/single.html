@@ -1,52 +1,54 @@
 {{ define "main" }}
-    <header class="header">
-      <h2 class="sub-title">
-        過去の活動
-      </h2>
+<div class="post content">
+  <header class="header">
+    <h2 class="sub-title">
+      過去の活動
+    </h2>
 
-      <h3>{{ .Title }}</h3>
+    <h3>{{ .Title }}</h3>
 
-      <!-- <div class="event-info">
-           {{ $eventDate := .Params.Get "event-date" }}
-           <div class="ev-date">
-           <div class="ev-yr">{{ time.Format "2006" $eventDate }}</div>
-           <div class="ev-day">{{ time.Format "01/02" $eventDate }}</div>
-           </div>
+    <!-- <div class="event-info">
+         {{ $eventDate := .Params.Get "event-date" }}
+         <div class="ev-date">
+         <div class="ev-yr">{{ time.Format "2006" $eventDate }}</div>
+         <div class="ev-day">{{ time.Format "01/02" $eventDate }}</div>
+         </div>
 
-           <div class="ev-weekday {{ time.Format "Mon" $eventDate | lower }}">{{ time.Format "Mon" $eventDate }}</div>
+         <div class="ev-weekday {{ time.Format "Mon" $eventDate | lower }}">{{ time.Format "Mon" $eventDate }}</div>
 
-           <div class="event-name">
-           {{ .Params.Get "event-name" }}
-           </div>
-           </div> -->
+         <div class="event-name">
+         {{ .Params.Get "event-name" }}
+         </div>
+         </div> -->
 
-      <div class="post-meta">
-        <div class="date">投稿　{{- time.Format "2006.01.02" .Page.Date }}</div>
-        <div class="author"><span class="desc">投稿者</span>　{{- .Params.Author }}</div>
-      </div>
-    </header>
-
-    <div class="post content">
-      {{ if and (gt .WordCount 400) (.Params.toc) }}
-        {{ .TableOfContents }}
-      {{ end }}
-
-      <article>
-        {{ .Content }}
-      </article>
+    <div class="post-meta">
+      <div class="date">投稿　{{- time.Format "2006.01.02" .Page.Date }}</div>
+      <div class="author"><span class="desc">投稿者</span>　{{- .Params.Author }}</div>
     </div>
+  </header>
 
-    <footer class="pager">
-      {{- with .PrevInSection }}
-      <a href="{{ .RelPermalink }}"  class="prev-post">
-        ◁ {{ .LinkTitle }}
-      </a>
-      {{ end }}
+  <div class="post-body">
+    {{ if and (gt .WordCount 400) (.Params.toc) }}
+    {{ .TableOfContents }}
+    {{ end }}
 
-      {{- with .NextInSection }}
-      <a href="{{ .RelPermalink }}" class="next-post">
-        {{ .LinkTitle }} ▷
-      </a>
-      {{ end -}}
-    </footer>
+    <article>
+      {{ .Content }}
+    </article>
+  </div>
+
+  <footer class="pager">
+    {{- with .PrevInSection }}
+    <a href="{{ .RelPermalink }}"  class="prev-post">
+      ◁ {{ .LinkTitle }}
+    </a>
+    {{ end }}
+
+    {{- with .NextInSection }}
+    <a href="{{ .RelPermalink }}" class="next-post">
+      {{ .LinkTitle }} ▷
+    </a>
+    {{ end -}}
+  </footer>
+</div>
 {{ end }}
