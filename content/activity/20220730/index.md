@@ -13,9 +13,5 @@ event-date: "2022-07-30"
 #  "" => ページにジャンプ (デフォルト)
 #  "none" => リンクを無効化
 #  任意のURL => URLにジャンプ
-custom-link: ""
+custom-link: "none"
 ---
-
-# イベント情報
-
-Discord上でオンライン開催しました。
