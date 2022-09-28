@@ -8,7 +8,7 @@
 
     {{ partial "bootstrap.html" }}
 
-    {{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "style.css" . | minify | fingerprint -}}
+    {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.css" . | toCSS | minify | fingerprint -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
     <link rel="icon" type="image/svg+xml" href="{{ relURL "img/tengineer.png" }}" />

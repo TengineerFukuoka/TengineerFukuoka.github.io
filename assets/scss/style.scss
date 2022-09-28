@@ -1,36 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
 
-:root {
-    --primary: #82C5CC;
-    --primary2: #0d6efd;
-    --tengineer: #82C5CC;
-    --cherryblossom: #FFA3CB;
-    --tree: #916034;
-    --penguin: #2EB2E8;
-    --dark: #21252f;
-    --body: #888;
-    --box-shadow: 0 8px 22px rgba(0,0,0,0.2);
-    --bg-light: #f5f5f5;
-}
+$primary: #82C5CC;
+$primary2: #0d6efd;
+$tengineer: #82C5CC;
+$cherryblossom: #FFA3CB;
+$tree: #916034;
+$penguin: #2EB2E8;
+$dark: #21252f;
+$body: #888;
+$box-shadow: 0 8px 22px rgba(0,0,0,0.2);
+$bg-light: #f5f5f5;
+
+$hero-bg: '{{ relURL "img/tengineer.png" }}';
+{{ if .Site.Params.top.scenery }}
+  $activity-scenery: '{{ relURL .Site.Params.top.scenery }}';
+{{ else }}
+  $activity-scenery: '{{ relURL "img/tengineer.png" }}';
+{{ end }}
 
 .bg-light {
-    background-color: var(--bg-light) !important;
+    background-color: $bg-light !important;
 }
 
 .text-tengineer {
-    color: var(--tengineer);
+    color: $tengineer;
 }
 
 .text-tree {
-    color: var(--tree);
+    color: $tree;
 }
 
 .text-penguin {
-    color: var(--penguin);
+    color: $penguin;
 }
 
 .text-cherryblossom {
-    color: var(--cherryblossom);
+    color: $cherryblossom;
 }
 
 .logo {
@@ -44,7 +49,7 @@ section{
 }
 
 a {
-    color: var(--dark);
+    color: $dark;
     text-decoration: none;
 }
 
@@ -55,7 +60,7 @@ img {
 body {
     font-family: Sora, "sans-serif";
     line-height: 1.7;
-    color: var(--body);
+    color: $body;
     padding: 0px 0;
     background-color: #82C5CC;
     background-color: rgba(39, 50, 72, 0.6);
@@ -69,7 +74,7 @@ h4,
 h5,
 h6,
 .display-4 {
-    color: var(--dark);
+    color: $dark;
     font-weight: 700;
 }
 
@@ -86,7 +91,7 @@ h6,
 }
 
 .navbar {
-    background-color: var(--tengineer) !important;
+    background-color: $tengineer !important;
 }
 
 .nav-effect{
@@ -96,7 +101,7 @@ h6,
 
 .nav-effect:hover{
     transform: translateY(2px);
-    color: var(--cherryblossom);
+    color: $cherryblossom;
 }
 
 .navbar .nav-link{
@@ -109,7 +114,7 @@ h6,
 .navbar .nav-link:hover{
     transition: all 0.35s ease;
     transform: translateY(2px);
-    color: var(--cherryblossom) !important;
+    color: $cherryblossom !important;
 }
 
 
@@ -126,7 +131,7 @@ h6,
 }
 .hero {
     height: 90vh !important;
-    background-image: url({{ relURL "img/tengineer.png" }});
+    background-image: url($hero-bg);
     background-position: center;
     background-size: auto;
     background-attachment: fixed;
@@ -155,8 +160,8 @@ h6,
 .sns-icons a {
     width: 60px;
     height: 60px;
-    background-color: var(--penguin);
-    border: 2px solid var(--tree);
+    background-color: $penguin;
+    border: 2px solid $tree;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -177,13 +182,13 @@ h6,
     width: 20px;
     height: 20px;
     display: block;
-	-webkit-transition: .4s ease-in-out;
-	transition: .4s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
 }
 
 .sns-icons a:hover {
-    color: var(--penguin);
-    background-color: var(--cherryblossom);
+    color: $penguin;
+    background-color: $cherryblossom;
 }
 
 .sns-icons a:hover img:nth-of-type(2){
@@ -194,11 +199,7 @@ h6,
 
 /* feature section */
 .col-img {
-    {{ if .Site.Params.top.scenery }}
-    background-image: url({{ relURL .Site.Params.top.scenery }});
-    {{ else }}
-    background-image: url({{ relURL "img/tengineer.png" }});
-    {{ end }}
+    background-image: url($activity-scenery);
     background-position: center;
     background-size: cover;  /* 画像の全部を収める事ができる */
     min-height: 500px;
@@ -219,7 +220,7 @@ h6,
     justify-content: center;
     color: white;
     font-size: 32px;
-    background-color: var(--penguin);
+    background-color: $penguin;
     border-radius: 100px;
     flex: none;
 }
@@ -239,7 +240,7 @@ h6,
 
 /* member section */
 .card-effect{
-    box-shadow: var(--box-shadow);
+    box-shadow: $box-shadow;
     background-color: #fff;
     padding: 25px;
     transition: all 0.35s ease;
@@ -265,7 +266,7 @@ h6,
 .social-icons a {
     width: 40px;
     height: 40px;
-    background-color: var(--penguin);
+    background-color: $penguin;
     border: 2px solid #fff;
     color: #fff;
     display: flex;
@@ -277,8 +278,8 @@ h6,
 }
 
 .social-icons a:hover {
-    color: var(--penguin);
-    border: 2px solid var(--penguin);
+    color: $penguin;
+    border: 2px solid $penguin;
     background-color: transparent;
 }
 
@@ -400,9 +401,7 @@ section.event.past-event .more-articles {
 section.event.past-event .more-articles:hover {
     transition: all 0.35s ease;
     transform: translateY(2px);
-    /* color:   var(--cherryblossom); */
     color: #F5B204;
-    /* background-color: var(--penguin); */
     background-color:rgba(39, 50, 72, 0.6);
 }
 
@@ -532,14 +531,10 @@ section.top .twitter-frame {
 
 /* article */
 
-/* .post.content { */
-/*     padding: 20px; */
-/* } */
-
 .post header {
     padding: 20px;
     background-color: #F5F5F5;
-    box-shadow: var(--box-shadow);
+    box-shadow: $box-shadow;
 }
 
 .post header h2 {
@@ -586,7 +581,7 @@ section.top .twitter-frame {
     margin: 3px;
     transition: background-color 0.3s, color 0.3s;
     background-color: #EEE;
-    box-shadow: var(--box-shadow);
+    box-shadow: $box-shadow;
 }
 
 .post .pager a:hover {
