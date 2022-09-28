@@ -1,6 +1,6 @@
 {{- if $.Site.Data.events }}
   <section class="event upcoming-event">
-    <h2>今後の活動予定</h2>
+    <h1>今後の活動予定</h1>
     <div class="section-contents">
       {{- range (sort $.Site.Data.events "date") }}
         {{ $link := .link }}
@@ -9,6 +9,9 @@
         {{ end }}
         {{- partial "activity" (dict "date" .date "title" .title "link" $link) }}
       {{- end }}
+    </div>
+    <div class="mokumoku">
+      毎週土日 14:00〜 / 20:00〜 週末もくもく会
     </div>
   </section>
 {{- end }}

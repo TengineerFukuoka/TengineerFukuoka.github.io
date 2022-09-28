@@ -5,10 +5,15 @@ toc = true
 hasCJKLanguage = true
 enableEmoji = true
 
+[Params]
+  copyright = "© 2022 TENGINEER福岡"
+
 [Params.top]
   # Displays top page's item in order.
-  # "hero", "activity", "upcoming_event", "past_event", "member", "contact" are supported.
-  sections = ["hero", "activity", "upcoming_event", "past_event", "member"]
+  # "hero", "activity", "upcoming_event", "past_event", "member", "contact", "twitter" are supported.
+  sections = ["hero", "activity", "upcoming_event", "past_event", "twitter"]
+  # トップページの活動内容の横に表示する画像の URL
+  scenery = ""
 
 [[Params.top.members]]
   name = "Sharbat Khan"

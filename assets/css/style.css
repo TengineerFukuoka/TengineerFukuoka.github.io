@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
 
 :root {
-    --primary:#82C5CC;
-    --primary2:#0d6efd;
-    --tengineer:#82C5CC;
+    --primary: #82C5CC;
+    --primary2: #0d6efd;
+    --tengineer: #82C5CC;
     --cherryblossom: #FFA3CB;
     --tree: #916034;
     --penguin: #2EB2E8;
@@ -40,6 +40,7 @@
 section{
     padding-top: 70px;
     padding-bottom: 100px;
+    width: 100%;
 }
 
 a {
@@ -193,7 +194,11 @@ h6,
 
 /* feature section */
 .col-img {
-    background-image: url({{ relURL "./img/tengineer.png" }});
+    {{ if .Site.Params.top.scenery }}
+    background-image: url({{ relURL .Site.Params.top.scenery }});
+    {{ else }}
+    background-image: url({{ relURL "img/tengineer.png" }});
+    {{ end }}
     background-position: center;
     background-size: cover;  /* 画像の全部を収める事ができる */
     min-height: 500px;
@@ -357,6 +362,9 @@ section.event.upcoming-event {
     background-color: #E5E5E5;
 }
 
+section.top.sns {
+    background-color: #E5E5E5;
+}
 
 section.event {
     text-align: center;
@@ -369,8 +377,9 @@ section.event .section-contents {
     margin: 0 auto;
 }
 
-section.event.future-event .mokumoku {
+section.event.upcoming-event .mokumoku {
     margin-top: 50px;
+    color: black;
 }
 
 section.event.past-event {
@@ -408,14 +417,15 @@ section.event.past-event .more-articles i {
     padding-top: 2px;
 }
 
-section.event h2 {
+section.event h1,
+section.top h1 {
     margin: 0;
     padding: 50px 0;
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
     line-height: 1.3em;
-    color: #F5B204;
+    text-align: center;
 }
 
 a.ev-link {
