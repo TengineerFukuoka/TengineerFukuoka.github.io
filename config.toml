@@ -14,19 +14,3 @@ enableEmoji = true
   sections = ["hero", "activity", "upcoming_event", "past_event", "twitter"]
   # トップページの活動内容の横に表示する画像の URL
   scenery = ""
-
-[[Params.top.members]]
-  name = "Sharbat Khan"
-  avatar = ""
-  title = "Web Developer"
-  facebook = ""
-  twitter = ""
-  github = ""
-
-[[Params.top.members]]
-  name = "Sharbat Khan"
-  avatar = ""
-  title = "Web Developer"
-  facebook = ""
-  twitter = ""
-  github = ""

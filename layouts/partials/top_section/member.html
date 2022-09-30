@@ -7,7 +7,7 @@
     </div>
 
     <div class="row g-3">
-      {{ range .Site.Params.top.members }}
+      {{ range .Site.Data.members }}
         <div class="col-lg-3 col-sm-6 text-center">
           <div class="team-member card-effect">
             {{ $avatar := .avatar }}

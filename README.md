@@ -28,42 +28,21 @@ $ hugo new activity/<適当な名前>.md
 
 ### メンバー
 
-`section` で `member` を表示するようにした場合、内容は `config.toml` の `[[Params.top.members]]` でカスタマイズできます。
+`section` で `member` を表示するようにした場合、内容は `data/members.yaml` で編集できます。
 
-```toml
-[[Params.top.members]]
+```yaml
   # 表示したいユーザ名
-  name = "hoge"
+- name: "hoge"
   # アイコン画像の URL
-  avatar = ""
+  avatar: ""
   # 肩書
-  title = "会長"
+  title: "会長"
   # Facebook のユーザ名
-  facebook = ""
+  facebook: ""
   # Twitter のユーザ名
-  twitter = ""
+  twitter: ""
   # GitHub のユーザ名
-  github = ""
-```
-
-複数人表示したい場合は `[[Params.top.members]]` のセクションを複数書いてください。例:
-
-```toml
-[[Params.top.members]]
-  name = "foo"
-  avatar = ""
-  title = "会長"
-  facebook = ""
-  twitter = ""
-  github = ""
-
-[[Params.top.members]]
-  name = "bar"
-  avatar = ""
-  title = "会長"
-  facebook = ""
-  twitter = ""
-  github = ""
+  github: ""
 ```
 
 ## ローカル環境での実行
