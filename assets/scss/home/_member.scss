@@ -1,0 +1,43 @@
+.card-effect{
+    box-shadow: $box-shadow;
+    background-color: #fff;
+    padding: 25px;
+    transition: all 0.35s ease;
+}
+
+.card-effect:hover{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+.team-member img{
+    width: 125px;
+    height: 125px;
+    border-radius: 100px;
+}
+
+.social-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background-color: $penguin;
+    border: 2px solid #fff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    margin-left: 5px;
+    transition: all 0.4s ease;
+}
+
+.social-icons a:hover {
+    color: $penguin;
+    border: 2px solid $penguin;
+    background-color: transparent;
+}

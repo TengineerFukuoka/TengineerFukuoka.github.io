@@ -1,0 +1,20 @@
+form input.form-control {
+    height: 56px;
+}
+
+form .form-control {
+    border: transparent;
+    border-radius: 0;
+    background-color: rgba(0,0,0,0.04);
+}
+
+.btn {
+    padding: 14px 18px;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    transition: all 0.4s ease;
+    transform: translateY(2px);
+}

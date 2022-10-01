@@ -8,8 +8,13 @@
 
     {{ partial "bootstrap.html" }}
 
-    {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.css" . | toCSS | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ if .IsHome }}
+      {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "home.css" . | toCSS | minify | fingerprint -}}
+      <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ else }}
+      {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.css" . | toCSS | minify | fingerprint -}}
+      <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ end }}
 
     <link rel="icon" type="image/svg+xml" href="{{ relURL "img/tengineer.png" }}" />
 

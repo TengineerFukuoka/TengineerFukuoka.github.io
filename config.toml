@@ -8,7 +8,7 @@ enableEmoji = true
 [Params]
   copyright = "© 2022 TENGINEER福岡"
 
-[Params.top]
+[Params.home]
   # Displays top page's item in order.
   # "hero", "activity", "upcoming_event", "past_event", "member", "contact", "twitter" are supported.
   sections = ["hero", "activity", "upcoming_event", "past_event", "twitter"]

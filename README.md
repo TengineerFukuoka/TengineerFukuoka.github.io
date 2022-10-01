@@ -23,7 +23,7 @@ $ hugo new activity/<適当な名前>.md
 
 ### 内容を増やす・減らす
 
-`config.toml` の `[Params.top]` の `section` を書き換えることでカスタマイズ可能です。
+`config.toml` の `[Params.home]` の `section` を書き換えることでカスタマイズ可能です。
 詳しくは `config.toml` を見てください。
 
 ### メンバー

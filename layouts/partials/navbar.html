@@ -11,7 +11,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        {{ range .Site.Params.top.sections }}
+        {{ range .Site.Params.home.sections }}
           {{ if eq . "hero" }}
             <li class="nav-item">
               <a class="nav-link" href="{{ relURL "#home" }}">TENGINEER福岡について</a>

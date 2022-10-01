@@ -1,0 +1,75 @@
+@media screen and (min-width: 960px) {
+    // 960px以上に適用されるCSS（PC用）
+    .hero {
+        background-size: cover !important;
+    }
+    .hero::after{
+        background-color: rgba(39, 50, 72, 0.6);
+    }
+}
+
+.hero {
+    height: 90vh !important;
+    background-image: url($hero-bg);
+    background-position: center;
+    background-size: auto;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(39, 50, 72, 0.8);
+    z-index: -1;
+}
+
+.sns-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.sns-icons a {
+    width: 60px;
+    height: 60px;
+    background-color: $penguin;
+    border: 2px solid $tree;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    margin: 20px;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.sns-icons a .bx{
+    font-size: 25px;
+}
+
+.sns-icons a img{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: block;
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+}
+
+.sns-icons a:hover {
+    color: $penguin;
+    background-color: $cherryblossom;
+}
+
+.sns-icons a:hover img:nth-of-type(2){
+    opacity: 0;
+}

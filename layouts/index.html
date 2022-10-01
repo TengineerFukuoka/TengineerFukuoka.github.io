@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 {{ $context := . }}
-{{ range .Site.Params.top.sections }}
-  {{ partial (printf "top_section/%s.html" .) $context }}
+{{ range .Site.Params.home.sections }}
+  {{ partial (printf "home/%s.html" .) $context }}
 {{ end }}
 {{ end }}

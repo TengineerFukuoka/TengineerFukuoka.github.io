@@ -1,0 +1,23 @@
+.col-img {
+    background-image: url($activity-scenery);
+    background-position: center;
+    background-size: cover;  /* 画像の全部を収める事ができる */
+    min-height: 500px;
+}
+
+.features-b {
+    margin-bottom: 80px;
+}
+
+.iconbox{
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    background-color: $penguin;
+    border-radius: 100px;
+    flex: none;
+}

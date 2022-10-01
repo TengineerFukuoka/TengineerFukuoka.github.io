@@ -1,0 +1,78 @@
+.post header {
+    padding: 20px;
+    background-color: #F5F5F5;
+    box-shadow: $box-shadow;
+}
+
+.post header h2 {
+    font-size: 28px;
+    color: gray;
+    text-align: center;
+}
+
+.post header h3 {
+    font-size: 35px;
+    text-align: center;
+}
+
+.post header .post-meta {
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: end;
+    padding: 20px;
+}
+
+.post .TableOfContents {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.post article {
+    margin: 0 auto;
+    max-width: 900px;
+    color: black;
+    padding: 50px 20px 100px 20px;
+    background-color: #EEE;
+}
+
+.post article a {
+    border-bottom: dotted 2px black;
+}
+
+.post .pager a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 8px 40px;
+    margin: 3px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #EEE;
+    box-shadow: $box-shadow;
+}
+
+.post .pager a:hover {
+    color: white;
+    background-color: #333;
+}
+
+@media screen and (max-width: 500px) {
+    .post .pager {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .post .pager {
+        display: flex;
+        padding: 30px;
+    }
+
+    .post .pager a.prev-post {
+        margin-right: auto;
+    }
+
+    .post .pager a.next-post {
+        margin-left: auto;
+    }
+}
