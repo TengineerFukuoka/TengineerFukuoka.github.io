@@ -36,7 +36,7 @@ $ hugo new activity/<適当な名前>.md
   # アイコン画像の URL
   avatar: ""
   # 肩書
-  title: "会長"
+  title: "代表"
   # Facebook のユーザ名
   facebook: ""
   # Twitter のユーザ名
