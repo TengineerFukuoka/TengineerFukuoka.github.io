@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Activities on 学生コミュニティ TENGINEER福岡</title>
+    <link>https://penguin-island.github.io/TENGINEER/activity/</link>
+    <description>Recent content in Activities on 学生コミュニティ TENGINEER福岡</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 04 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://penguin-island.github.io/TENGINEER/activity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>7月の月例会を開催しました</title>
+      <link>https://penguin-island.github.io/TENGINEER/activity/20220730/</link>
+      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://penguin-island.github.io/TENGINEER/activity/20220730/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ハンズオン「UnityでWebAR開発を始めてみよう！」を開催しました</title>
+      <link>https://penguin-island.github.io/TENGINEER/activity/20220904/</link>
+      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://penguin-island.github.io/TENGINEER/activity/20220904/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ハンズオン「はじめてのARハンズオン#01」を開催しました</title>
+      <link>https://penguin-island.github.io/TENGINEER/activity/20220702/</link>
+      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://penguin-island.github.io/TENGINEER/activity/20220702/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
