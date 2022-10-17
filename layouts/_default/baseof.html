@@ -47,6 +47,8 @@
     <link rel="canonical" href="{{ .Permalink }}">
   </head>
   <body>
+    {{ partial "campaign.html" . }}
+
     {{ partial "navbar.html" . }}
 
     {{- block "main" . }}{{ end }}

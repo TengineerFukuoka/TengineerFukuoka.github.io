@@ -1,0 +1,15 @@
+.campaign-header {
+    background-color: #222;
+    padding: 15px;
+    color: white;
+    text-align: center;
+
+    a {
+        color: white;
+        text-decoration: underline;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+}
