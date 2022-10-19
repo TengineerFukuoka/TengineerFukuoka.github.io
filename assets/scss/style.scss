@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
 
-$hero-bg: '{{ relURL "img/tengineer.png" }}';
+$hero-bg: '{{ relURL "img/top.jpg" }}';
 {{ if .Site.Params.home.scenery }}
   $activity-scenery: '{{ relURL .Site.Params.home.scenery }}';
 {{ else }}
-  $activity-scenery: '{{ relURL "img/tengineer.png" }}';
+  $activity-scenery: '{{ relURL "img/sub.jpg" }}';
 {{ end }}
 
 @import './_base';
